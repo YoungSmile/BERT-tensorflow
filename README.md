@@ -1,3 +1,7 @@
+# PROGRESS
+
+10%
+
 # USAGE
 
 Edit the file path in `bert.py`
@@ -12,3 +16,9 @@ With parameters:
 ```
 --generate_data --problem=bert  --data_dir=../../t2t_data --tmp_dir=../../t2t_data/tmp  --model=transformer --hparams_set=transformer_tiny --output_dir=../../t2t_train/lm  --train_steps=1000  --eval_steps=100
 ```
+
+# EXPERIMENT RESULT
+
+|next sentence predict|
+--------------------
+|metrics-bert/targets/accuracy = 1.0|
