@@ -19,6 +19,7 @@ With parameters:
 
 # EXPERIMENT RESULT
 
-|next sentence predict|
---------------------
-|metrics-bert/targets/accuracy = 1.0|
+|  | next sentence predict |
+| ------ | ------ |
+| accuracy | 100% |
+
