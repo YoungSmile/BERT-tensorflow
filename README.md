@@ -1,5 +1,4 @@
-# BERT
-BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding
+# USAGE
 
 Put `bert.py` to https://github.com/tensorflow/tensor2tensor/tree/master/tensor2tensor/data_generators
 
