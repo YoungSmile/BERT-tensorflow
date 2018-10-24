@@ -1,5 +1,7 @@
 # USAGE
 
+Edit the file path in `bert.py`
+
 Put `bert.py` to https://github.com/tensorflow/tensor2tensor/tree/master/tensor2tensor/data_generators
 
 Edit https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/data_generators/all_problems.py
