@@ -45,6 +45,10 @@ class Bert(text_problems.Text2ClassProblem):
     def num_classes(self):
         return 2
 
+    # @property
+    # def has_inputs(self):
+    #     return False
+
     @property
     def dataset_splits(self):
         return [{
@@ -71,18 +75,16 @@ class Bert(text_problems.Text2ClassProblem):
         return self.generate_samples(data_dir, tmp_dir, dataset_split)
 
     def generate_samples(self, data_dir, tmp_dir, dataset_split):
-        vocab_path = "C:\\Users\\gt\\PycharmProjects\\bert-tf\\data\\vocab"
+        vocab_path = "../../t2t_data/vocab"
 
         word2id = {}
-        word2id["<PAD>"] = 0
-        word2id["<SEP>"] = 1
         f = open(vocab_path, encoding="utf-8", mode="r")
         lines = f.readlines()
         for i, line in enumerate(lines):
             word = line.replace("\n", "")
             word2id[word] = i
 
-        data_file = "C:\\Users\\gt\\PycharmProjects\\bert-tf\\data\\next_sentence"
+        data_file = "../../t2t_data/next_sentence"
 
         f = open(data_file, encoding="utf-8", mode="r")
 
@@ -101,11 +103,11 @@ class Bert(text_problems.Text2ClassProblem):
             if prob < 0.5:
                 one_sentence = sentences[0] + " <SEP> " + sentences[1]
                 one_sentence_ = []
-                for word in one_sentence:
-                    if word in word2id:
+                for word in one_sentence.split(" "):
+                    if word.lower() in word2id:
                         one_sentence_.append(word2id[word.lower()])
                 one_sentence_ = one_sentence_ + [0]*(100-len(one_sentence_))
-                label = [1,0]
+                label = [1]
                 yield {
                     "inputs":one_sentence_,
                     "targets":label
@@ -116,11 +118,11 @@ class Bert(text_problems.Text2ClassProblem):
                     result = all_sentence[random.randrange(len(all_sentence))]
                 one_sentence = sentences[0] + " <SEP> " + result
                 one_sentence_ = []
-                for word in one_sentence:
-                    if word in word2id:
+                for word in one_sentence.split(" "):
+                    if word.lower() in word2id:
                         one_sentence_.append(word2id[word.lower()])
                 one_sentence_ = one_sentence_ + [0] * (100 - len(one_sentence_))
-                label = [0,1]
+                label = [0]
                 yield {
                     "inputs":one_sentence_,
                     "targets":label
