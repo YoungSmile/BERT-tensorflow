@@ -106,7 +106,7 @@ class Bert(text_problems.Text2ClassProblem):
                 for word in one_sentence.split(" "):
                     if word.lower() in word2id:
                         one_sentence_.append(word2id[word.lower()])
-                one_sentence_ = one_sentence_ + [0]*(100-len(one_sentence_))
+                #one_sentence_ = one_sentence_ + [0]*(100-len(one_sentence_))
                 label = [1]
                 yield {
                     "inputs":one_sentence_,
@@ -121,7 +121,7 @@ class Bert(text_problems.Text2ClassProblem):
                 for word in one_sentence.split(" "):
                     if word.lower() in word2id:
                         one_sentence_.append(word2id[word.lower()])
-                one_sentence_ = one_sentence_ + [0] * (100 - len(one_sentence_))
+                #one_sentence_ = one_sentence_ + [0] * (100 - len(one_sentence_))
                 label = [0]
                 yield {
                     "inputs":one_sentence_,
