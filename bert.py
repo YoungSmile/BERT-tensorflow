@@ -38,7 +38,7 @@ EOS = text_encoder.EOS
 
 
 @registry.register_problem
-class Bert(text_problems.Text2TextProblem):
+class Bert(text_problems.Text2ClassProblem):
 
     # for next sentence predict
     @property
