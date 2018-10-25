@@ -14,7 +14,7 @@ Then run https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/b
 
 With parameters:
 ```
---generate_data --problem=bert  --data_dir=../../t2t_data --tmp_dir=../../t2t_data/tmp  --model=transformer --hparams_set=transformer_tiny --output_dir=../../t2t_train/lm  --train_steps=1000  --eval_steps=100
+--generate_data --problem=bert  --data_dir=../../t2t_data --tmp_dir=../../t2t_data/tmp  --model=transformer_encoder --hparams_set=transformer_tiny --output_dir=../../t2t_train/lm  --train_steps=1000  --eval_steps=100
 ```
 
 # EXPERIMENT RESULT
