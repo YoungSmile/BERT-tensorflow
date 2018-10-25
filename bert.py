@@ -101,14 +101,14 @@ class Bert(text_problems.Text2ClassProblem):
             sentences = two_sentence.split("\t")
             prob = random.random()
             if prob < 0.5:
-                one_sentence = sentences[0] + " <SEP> " + sentences[1]
+                one_sentence = sentences[0].replace(".","") + " <SEP> " + sentences[1].replace(".","")
                 one_sentence_ = []
                 for word in one_sentence.split(" "):
                     if word.lower() in word2id:
                         one_sentence_.append(word2id[word.lower()])
                 one_sentence_ = one_sentence_ + [0]*(100-len(one_sentence_))
                 label = [1]
-                yield {
+                return {
                     "inputs":one_sentence_,
                     "targets":label
                 }
@@ -116,14 +116,14 @@ class Bert(text_problems.Text2ClassProblem):
                 result = all_sentence[random.randrange(len(all_sentence))]
                 if result==sentences[1]:
                     result = all_sentence[random.randrange(len(all_sentence))]
-                one_sentence = sentences[0] + " <SEP> " + result
+                one_sentence = sentences[0].replace(".","") + " <SEP> " + result.replace(".","")
                 one_sentence_ = []
                 for word in one_sentence.split(" "):
                     if word.lower() in word2id:
                         one_sentence_.append(word2id[word.lower()])
                 one_sentence_ = one_sentence_ + [0] * (100 - len(one_sentence_))
                 label = [0]
-                yield {
+                return {
                     "inputs":one_sentence_,
                     "targets":label
                 }
