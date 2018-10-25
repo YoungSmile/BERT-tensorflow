@@ -108,7 +108,7 @@ class Bert(text_problems.Text2ClassProblem):
                         one_sentence_.append(word2id[word.lower()])
                 one_sentence_ = one_sentence_ + [0]*(100-len(one_sentence_))
                 label = [1]
-                return {
+                yield {
                     "inputs":one_sentence_,
                     "targets":label
                 }
@@ -123,7 +123,7 @@ class Bert(text_problems.Text2ClassProblem):
                         one_sentence_.append(word2id[word.lower()])
                 one_sentence_ = one_sentence_ + [0] * (100 - len(one_sentence_))
                 label = [0]
-                return {
+                yield {
                     "inputs":one_sentence_,
                     "targets":label
                 }
