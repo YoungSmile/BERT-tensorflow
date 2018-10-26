@@ -21,5 +21,5 @@ With parameters:
 
 |  | next sentence predict |
 | ------ | ------ |
-| accuracy |  |
+| accuracy | 90% |
 
