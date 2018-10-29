@@ -1,4 +1,5 @@
-  # edit the SymbolModality's bottom_simple of https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/layers/modalities.py
+  # insert `ret = self.position_embedding(ret)`
+  # to the SymbolModality's bottom_simple of https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/layers/modalities.py
   
   def position_embedding(self,ret):
       pe = np.zeros(shape=[100,128])
