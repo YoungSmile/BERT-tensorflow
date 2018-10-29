@@ -6,6 +6,8 @@
 
 Edit the file path in `bert.py`
 
+Insert `ret = self.position_embedding(ret)` to the `SymbolModality`'s `bottom_simple` of https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/layers/modalities.py
+  
 Put `bert.py` to https://github.com/tensorflow/tensor2tensor/tree/master/tensor2tensor/data_generators
 
 Edit https://github.com/tensorflow/tensor2tensor/blob/master/tensor2tensor/data_generators/all_problems.py
